@@ -1,0 +1,28 @@
+<h2>Wishes</h2>
+<?php 
+    if(count($this->wishes) > 0):
+        echo '<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Date</td>
+            <td>User</td>
+            <td>Wish</td>
+            <td>Filled</td>
+        </tr>';
+        foreach($this->wishes as $wish):
+           echo '<tr>
+                    <td>' . date('d.m.Y', $wish['date']) . '</td>
+                    <td><span class="songTitle">' . $wish['username'] . '</span></td>
+                    <td>' . $wish['wish'] . '</td>
+                    <td>';
+                    if($wish['wishStatus'] == '1'){
+                        echo "Yes";
+                    }else{
+                        echo "No";
+                    }
+                    echo '</td>
+                </tr>';
+        endforeach;
+    echo '</table>';
+    else:echo "There are no wish";
+    endif;
+?>

@@ -1,0 +1,19 @@
+<h4>Choose songs</h4>
+<?php 
+    if(count($this->songs) > 0):
+        echo '<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Id</td>
+            <td>Title</td>
+            <td></td>
+        </tr>';
+        foreach($this->songs as $song):
+            echo "<tr>";
+            echo "<td>" . $song['songId'] . "</td>";
+            echo "<td>" . $song['songTitle'] . "</td>";
+            echo "<td><a href='' class='songadd' id='" . $song['songId'] . "' title='" . $song['songTitle'] . "'>Choose</a></td>";
+            echo "</tr>";
+        endforeach;
+        echo '</table>';
+    endif;
+?>

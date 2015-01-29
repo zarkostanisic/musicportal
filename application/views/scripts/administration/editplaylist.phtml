@@ -1,0 +1,24 @@
+<h2>Edit playlist - <?php echo $this->playlist['playlistTitle']; ?></h2>
+<?php 
+    echo $this->edit_playlist;
+?>
+<hr/>
+<?php 
+    if(count($this->songs) > 0):
+        echo '<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Code</td>
+            <td>Title</td>
+            <td></td>
+        </tr>';
+        foreach($this->songs as $song):
+           echo '<tr>
+                    <td>' . $song['songId'] . '</td>
+                    <td><span class="songTitle">' . $song['songTitle'] . '</span><span> ( ' . $song['size'] . ' ) </span></td>
+                    <td><a href="' . $this->url(array('controller' => 'Administration', 'action' => 'editplaylist', 'id' => $this->id, 'delete' => $song['itemId']), null, true) . '" class="block"></a></td>
+                </tr>';
+        endforeach;
+    echo '</table>';
+    else:echo "There are no songs for this artist";
+    endif;
+?>

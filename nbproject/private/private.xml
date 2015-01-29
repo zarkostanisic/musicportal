@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/index/about.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/users/login.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/search/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/Bootstrap.php</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/users/logout.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/playlists/show.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/library/Service/playlist.php</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/playlists/useraddplaylist.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/index/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/placeholders/_footer.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/placeholders/_menu.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/service/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/error/error.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/songs/wishes.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/playlists/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/pagination/_show.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/users/registration.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/contact/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/songs/show.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/placeholders/_right.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/songs/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/placeholders/_left_menu.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/artists/index.phtml</file>
+            <file>file:/C:/xampp/htdocs/music.portal/application/views/scripts/users/index.phtml</file>
+        </group>
+    </open-files>
+</project-private>

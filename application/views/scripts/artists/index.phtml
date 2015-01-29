@@ -1,0 +1,41 @@
+<h2 class="pl">Artists - <?php echo $this->category_title; ?></h2>
+<div class="table-border">
+<?php 
+    if(count($this->artists) > 0):
+?>
+<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+                <td class="col1">Artist</td>
+                <td class="col2" style="width:10px;">Songs</td>
+                <td>About</td>
+        </tr>
+        <?php foreach($this->artists as $artist): ?>
+        <tr class="even">
+                <td class="col1">
+                        <a href="<?php echo $this->url(array('controller' => 'songs', 'action' => 'index', 'id' => $artist['artistId']), null, true); ?>" class="name"><img src="<?php echo $this->baseUrl(); ?>/images/artists/<?php echo $artist['artistImage']; ?>"/></a><br>
+                        <a href="<?php echo $this->url(array('controller' => 'songs', 'action' => 'index', 'id' => $artist['artistId']), null, true); ?>" class="name"><?php echo $artist['artistName']; ?></a>
+                </td>
+                <td class="col2" style="width:10px;">
+                <?php 
+                    $check = false;
+                    foreach($this->song_nums as $nums):
+                       if($artist['artistId'] == $nums['artistId']):
+                          echo '<p class="name">' . $nums['cnt'] . '</p>';
+                          $check = true;
+                       endif;
+                    endforeach;
+                    if($check == false):
+                       echo "<p class='name'>0</p>";
+                    endif;
+                ?>
+                </td>
+                <td><?php echo $artist['artistAbout']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+</table>
+<?php
+    else:echo "There are no artists for this category";
+    endif;
+    echo $this->paginationControl($this->pagination,'Sliding','/pagination/_show.phtml', $this->params);
+?>
+</div>

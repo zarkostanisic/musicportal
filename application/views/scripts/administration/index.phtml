@@ -1,0 +1,44 @@
+<h2>Add a category</h2>
+<?php 
+    echo $this->add_category;
+?>
+<hr/>
+<div class="table-border tableborder">
+<?php
+    if(count($this->categories) > 0):
+?>
+<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Id</td>
+            <td>Category title</td>
+            <td>Status</td>
+            <td></td>
+        </tr>
+<?php
+        foreach($this->categories as $cat):
+            echo "<tr>";
+            echo "<td>" . $cat['categoryId'] . "</td>";
+            echo "<td>" . $cat['categoryTitle'] . "</td>";
+            echo "<td>";
+            if($cat['status'] == 1){
+                echo "Allow";
+            }else{
+                echo "Block";
+            }
+            echo "</td>";
+            echo "<td>";
+                    if($cat['status'] == 1){
+                        echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'index', 'block' => $cat['categoryId']), null, true) . "' class='block'></a>";
+                    }else{
+                        echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'index', 'allow' => $cat['categoryId']), null, true) . "' class='allow'></a>";
+                    }
+                    echo "<a href='" .$this->url(array('controller' => 'Administration', 'action' => 'editcategory', 'id' => $cat['categoryId']), null, true) . "' class='edit'></a>
+                  </td>";
+            echo "</tr>";
+        endforeach;
+?>
+</table>
+<?php
+    endif;
+?>
+</div>

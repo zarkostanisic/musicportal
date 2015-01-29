@@ -1,0 +1,6 @@
+<?php $this->placeholder('left_menu')->captureStart(); ?>
+<h2>Categories</h2>
+<?php foreach($this->categories as $category):?>
+<a href="<?php echo $this->url(array('controller' => 'artists', 'action' => 'index', 'id' => $category['categoryId']), null, true); ?>" class="categiries"><?php echo $category['categoryTitle']; ?></a>
+<?php endforeach;?>
+<?php $this->placeholder('left_menu')->captureEnd(); ?>

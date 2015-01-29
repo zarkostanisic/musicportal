@@ -1,0 +1,37 @@
+<h2>Add a playlist</h2>
+<a href="<?php echo $this->url(array('controller' => 'Administration', 'action' => 'playlists'), null, true); ?>">Add</a>
+<hr/>
+<?php 
+    if(count($this->playlists) > 0):
+        echo '<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Id</td>
+            <td>Title</td>
+            <td>Status</td>
+            <td></td>
+        </tr>';
+        foreach($this->playlists as $playlist):
+           echo '<tr>
+                    <td>' . $playlist['playlistId'] . '</td>
+                    <td><span class="songTitle">' . $playlist['playlistTitle'] . '</span></td>';
+                    echo "<td>";
+                    if($playlist['status'] == 1){
+                        echo "Allow";
+                    }else{
+                        echo "Block";
+                    }
+                    echo "</td>";
+                    echo "<td>";
+                    if($playlist['status'] == 1){
+                        echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'showplaylists', 'block' => $playlist['playlistId']), null, true) . "' class='block'></a>";
+                    }else{
+                        echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'showplaylists', 'allow' => $playlist['playlistId']), null, true) . "' class='allow'></a>";
+                    }
+                    echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'editplaylist', 'id' => $playlist['playlistId']), null, true) . "' class='edit'></a>";
+                    echo "</td>";
+                echo '</tr>';
+        endforeach;
+    echo '</table>';
+    else:echo "There are no playlist";
+    endif;
+?>

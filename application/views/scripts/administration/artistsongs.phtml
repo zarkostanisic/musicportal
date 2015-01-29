@@ -1,0 +1,42 @@
+<h2><?php echo $this->artist; ?></h2>
+<hr/>
+<div class="table-border tableborder">
+<?php
+    if(count($this->songs) > 0):
+?>
+<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Id</td>
+            <td>Title</td>
+            <td>Status</td>
+            <td></td>
+        </tr>
+<?php
+        foreach($this->songs as $song):
+            echo "<tr>";
+            echo "<td>" . $song['songId'] . "</td>";
+            echo "<td>" . $song['songTitle'] . "</td>";
+            echo "<td>";
+            if($song['status'] == 1){
+                echo "Allow";
+            }else{
+                echo "Block";
+            }
+            echo "</td>";
+            echo "<td>";
+                    if($song['status'] == 1){
+                        echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'artistsongs', 'id' => $this->id, 'block' => $song['songId']), null, true) . "' class='block'></a>";
+                    }else{
+                        echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'artistsongs', 'id' => $this->id, 'allow' => $song['songId']), null, true) . "' class='allow'></a>";
+                    }
+                    echo "<a href='" . $this->url(array('controller' => 'Administration', 'action' => 'editsong', 'id' => $this->id), null, true) . "' class='edit'></a>";
+                  echo "</td>";
+            echo "</tr>";
+        endforeach;
+?>
+</table>
+<?php
+    else:echo "There are no songs";
+    endif;
+?>
+</div>

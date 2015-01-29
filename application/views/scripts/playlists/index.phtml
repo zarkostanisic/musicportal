@@ -1,0 +1,24 @@
+<h2>Playlists</h2>
+<!--<a href="<?php echo $this->url(array('controller' => 'Playlists', 'action' => 'useraddplaylist'), null, true); ?>">Add song in playlist</a>
+<hr/>-->
+<?php 
+    if(count($this->playlists) > 0):
+        echo '<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Title</td>
+            <td>Date</td>
+            <td></td>
+        </tr>';
+        foreach($this->playlists as $playlist):
+           echo '<tr>
+                    <td><span class="songTitle">' . $playlist['playlistTitle'] . '</span></td>';
+                    echo "<td>" . date('d.m.Y H:i:s', $playlist['date']) . "</td>";
+                    echo "<td>";
+                    echo "<a href='" . $this->url(array('controller' => 'playlists', 'action' => 'show', 'id' => $playlist['playlistId']), null, true) . "' class='music'></a>";
+                    echo "</td>";
+                echo '</tr>';
+        endforeach;
+    echo '</table>';
+    else:echo "There are no playlist";
+    endif;
+?>

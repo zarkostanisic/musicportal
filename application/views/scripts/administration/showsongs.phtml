@@ -1,0 +1,27 @@
+<h2>Add a song</h2>
+<a href="<?php echo $this->url(array('controller' => 'Administration', 'action' => 'songs'), null, true); ?>">Add</a>
+<hr/>
+<div class="table-border tableborder">
+<?php
+    if(count($this->artists) > 0):
+?>
+<table class="dates" cellpadding="0" cellspacing="0" border="0">
+        <tr class="thead">
+            <td>Id</td>
+            <td>Artist name</td>
+            <td></td>
+        </tr>
+<?php
+        foreach($this->artists as $artist):
+            echo "<tr>";
+            echo "<td>" . $artist['artistId'] . "</td>";
+            echo "<td>" . $artist['artistName'] . "</td>";
+            echo "<td><a href='" . $this->url(array('controller' => 'Administration', 'action' => 'artistsongs', 'id' => $artist['artistId']), null, true) . "' class='music'></a></td>";
+            echo "</tr>";
+        endforeach;
+?>
+</table>
+<?php
+    endif;
+?>
+</div>

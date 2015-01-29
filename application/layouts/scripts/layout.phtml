@@ -1,0 +1,170 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/images/logo.png" />
+<?php echo $this->headTitle(); ?>
+<?php echo $this->headLink(); ?>
+<?php echo $this->headScript(); ?>
+<script type="text/javascript">
+    var songs = [];
+    var vals = [];
+    $(document).ready(function(){
+       $('nav,.more,.header-more').sprites();
+       
+       $('#searchsong').keyup(function(){
+            var data = {
+              val:$(this).val()  
+            };
+            $.ajax({
+                url:"<?php echo $this->url(array('controller' => 'Songs', 'action' => 'show'), null, true); ?>",
+                type:'POST',
+                data:data,
+                success:function(msg){
+                    $('#playlistlist').html(msg);
+                }
+            });
+        });
+        $(document).on("click", ".songadd", function(){
+            var id = $(this).attr('id');
+            var val = $(this).attr('title');
+            $(this).parent().parent().hide();
+            songs.push(id);
+            vals.push(val);
+            
+            confirmPlay();
+            return false;
+            
+           
+        });
+        
+        $(document).on('click','.removeitem',function(){
+            var id = $(this).attr('id');
+            
+            songs.splice(songs.indexOf(id),1);
+            vals.splice(vals.indexOf(id),1);
+            
+            confirmPlay();
+            
+            return false;
+        });
+        
+        $(document).on('click','.addnewplaylist',function(){
+            var data = {
+              songs:songs,
+              title:$('#title').val()
+            };
+            
+            if($('#title').val().length < 5){
+                alert('Title most have min 5 characters');
+                return false;
+            }
+            $.ajax({
+                url:"<?php echo $this->url(array('controller' => 'Administration', 'action' => 'addplaylist'), null, true); ?>",
+                type:'POST',
+                data:data,
+                success:function(msg){
+                    $('#confirmplaylist').html('Playlist success added');
+                    $('#playlistlist').html('');
+                }
+            });
+        });
+
+        $(document).on('click','.playme',function(){
+            var url = $(this).attr('data-url');
+
+            $(this).attr('class', 'stopme');
+            $('.playme, .stopme').html("<img src='<?php echo $this->baseUrl(); ?>/css/play.png'/>");
+            $(this).html('<img src="<?php echo $this->baseUrl(); ?>/css/stop.png"/><audio autoplay src="' + url + '"></audio>');
+        });
+
+        $(document).on('click','.stopme',function(){
+            $(this).attr('class', 'playme');
+            $(this).html("<img src='<?php echo $this->baseUrl(); ?>/css/play.png'/>");
+        });        
+        
+    });
+function confirmPlay(){
+    var show = "";
+    show += "<h4>Choosed items</h4>";
+    show += "<table class='dates' cellpadding='0' cellspacing='0' border='0'><tr class='thead'><td>Id</td><td>Title</td><td></td></tr>";
+    for(var i=0;i<songs.length;i++){
+        show += "<tr>";
+        show += "<td>" + songs[i] + "</td>";
+        show += "<td>" + vals[i] + "</td>";
+        show += "<td><a href='' class='removeitem block' id='" + songs['id'] + "'></a></td>";
+        show += "</tr>";
+    }
+    show += "</table>";
+    show += "<hr/>";
+    show += "<form id='form1'><label>Playlist title</label><input type='text' id='title' class='text'/><input type='button' class='addnewplaylist' id='button' value='Add'/></form>";
+    
+    if(songs.length > 0){
+        $('#confirmplaylist').html(show);       
+    }else{
+        $('#confirmplaylist').html('');
+    }
+    
+    return false;
+}
+</script>
+</head>
+<body id="page2">
+<div id="main">
+	<a href="<?php echo $this->baseUrl(); ?>" id="logo"><img src="<?php echo $this->baseUrl(); ?>/images/logo.png" /></a>
+	<div id="login">
+            <?php 
+                if(!isset($this->role_title)){
+                    echo new Application_Form_Login();
+                }else{
+                    echo "<a href='" . $this->url(array('controller' => 'Users', 'action' => 'logout'), null, true) . "' style='color:black;float:right;'>Logout</a><span style='float:right;'><strong>" . $this->username_title . "</strong></span>";
+                }
+            ?>
+	</div>
+	<header>
+	<nav>
+            <?php echo $this->placeholder('menu'); ?>
+	</nav>
+</header>
+  <article id="content">
+	<div class="col-1">
+                <div class="p2">
+                    <?php echo $this->placeholder('left_menu'); ?>
+                </div>
+	</div>
+	<div class="col-2">
+                <?php echo $this->layout()->content; ?>
+	</div>
+	<div class="col-3">
+		<h2>Search</h2>
+		<?php echo new Application_Form_Search(); ?>
+		<div class="p2">
+		<h2>Top artist</h2>
+                <?php 
+                    if(count($this->popular)):
+                        foreach($this->popular as $pop):
+
+
+                ?>
+                <img src="<?php echo $this->baseUrl(); ?>/images/artists/<?php echo $pop['artistImage']; ?>" class="p1" alt="" width="150px;"> <a href="<?php echo $this->url(array('controller' => 'Songs', 'action' => 'index', 'id' => $pop['artistId']), null, true); ?>" style="margin-top: -20px;font-size: 8px;padding:0px;margin-bottom:5px;" class="more">Play songs</a>
+                <?php                          
+                        endforeach;
+                    endif;
+                ?>
+		</div>
+	</div>
+  </article>
+  <div class="af clear"></div>
+</div>
+<footer>
+	<?php 
+            echo $this->placeholder('footer');
+        ?>
+</footer>
+<script type="text/javascript">Cufon.now();
+/*$(function(){
+	$('nav,.more,.header-more').sprites();
+});*/
+</script>
+</body>
+</html>

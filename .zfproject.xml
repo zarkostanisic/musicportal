@@ -1,0 +1,305 @@
+<?xml version="1.0"?>
+<projectProfile type="default" version="1.12.3">
+  <projectDirectory>
+    <projectProfileFile filesystemName=".zfproject.xml"/>
+    <applicationDirectory classNamePrefix="Application_">
+      <configsDirectory>
+        <applicationConfigFile type="ini"/>
+      </configsDirectory>
+      <controllersDirectory>
+        <controllerFile controllerName="Index">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="about"/>
+        </controllerFile>
+        <controllerFile controllerName="Error"/>
+        <controllerFile controllerName="Forme">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="moja"/>
+        </controllerFile>
+        <controllerFile controllerName="My">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="login"/>
+        </controllerFile>
+        <controllerFile controllerName="Basic">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Artists">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="MY">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Songs">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="showSongs"/>
+          <actionMethod actionName="showMusic"/>
+          <actionMethod actionName="show"/>
+          <actionMethod actionName="wishes"/>
+        </controllerFile>
+        <controllerFile controllerName="Search">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Users">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="registration"/>
+          <actionMethod actionName="login"/>
+          <actionMethod actionName="logout"/>
+        </controllerFile>
+        <controllerFile controllerName="Contact">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Categories">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Administration">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="artists"/>
+          <actionMethod actionName="songs"/>
+          <actionMethod actionName="playlists"/>
+          <actionMethod actionName="addplaylist"/>
+          <actionMethod actionName="showplaylists"/>
+          <actionMethod actionName="editplaylist"/>
+          <actionMethod actionName="showsongs"/>
+          <actionMethod actionName="artistsongs"/>
+          <actionMethod actionName="editsong"/>
+          <actionMethod actionName="editartist"/>
+          <actionMethod actionName="editcategory"/>
+          <actionMethod actionName="users"/>
+          <actionMethod actionName="edituser"/>
+          <actionMethod actionName="wishes"/>
+        </controllerFile>
+        <controllerFile controllerName="Download">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+        <controllerFile controllerName="Playlists">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="show"/>
+          <actionMethod actionName="useraddplaylist"/>
+        </controllerFile>
+        <controllerFile controllerName="Service">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="getplaylist"/>
+          <actionMethod actionName="soap"/>
+          <actionMethod actionName="wsdl"/>
+        </controllerFile>
+        <controllerFile controllerName="Soap">
+          <actionMethod actionName="index"/>
+        </controllerFile>
+      </controllersDirectory>
+      <formsDirectory>
+        <formFile formName="Login"/>
+        <formFile formName="Search"/>
+        <formFile formName="Registration"/>
+        <formFile formName="Contact"/>
+        <formFile formName="AddCategory"/>
+        <formFile formName="AddArtist"/>
+        <formFile formName="AddSongs"/>
+        <formFile formName="AddSong"/>
+        <formFile formName="AddPlaylist"/>
+        <formFile formName="EditPlaylist"/>
+        <formFile formName="EditSong"/>
+        <formFile formName="EditArtist"/>
+        <formFile formName="EditCategory"/>
+        <formFile formName="EditUser"/>
+        <formFile formName="EditPassword"/>
+        <formFile formName="AddForm"/>
+        <formFile formName="AddSongInPlaylist"/>
+      </formsDirectory>
+      <layoutsDirectory>
+        <layoutScriptsDirectory>
+          <layoutScriptFile layoutName="layout"/>
+        </layoutScriptsDirectory>
+      </layoutsDirectory>
+      <modelsDirectory>
+        <modelFile modelName="Categories"/>
+        <modelFile modelName="Artists"/>
+        <modelFile modelName="Albums"/>
+        <modelFile modelName="Songs"/>
+        <modelFile modelName="Cities"/>
+        <modelFile modelName="Users"/>
+        <modelFile modelName="Playlists"/>
+        <modelFile modelName="Roles"/>
+      </modelsDirectory>
+      <modulesDirectory enabled="false"/>
+      <servicesDirectory enabled="false"/>
+      <viewsDirectory>
+        <viewScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Error">
+            <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Forme">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Forme">
+            <viewScriptFile forActionName="moja"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="My">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="My">
+            <viewScriptFile forActionName="login"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Basic">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Artists">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="MY">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Songs">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Search">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="registration"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Contact">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Categories">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="artists"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="songs"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Download">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="playlists"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Songs">
+            <viewScriptFile forActionName="showSongs"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Songs">
+            <viewScriptFile forActionName="showMusic"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Songs">
+            <viewScriptFile forActionName="show"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="addplaylist"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="showplaylists"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="editplaylist"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="showsongs"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="artistsongs"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="editsong"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="editartist"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="editcategory"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Playlists">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Playlists">
+            <viewScriptFile forActionName="show"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="users"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="edituser"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="login"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Users">
+            <viewScriptFile forActionName="logout"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Songs">
+            <viewScriptFile forActionName="wishes"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Administration">
+            <viewScriptFile forActionName="wishes"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Index">
+            <viewScriptFile forActionName="about"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Service">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Service">
+            <viewScriptFile forActionName="getplaylist"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Service">
+            <viewScriptFile forActionName="soap"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Service">
+            <viewScriptFile forActionName="wsdl"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Playlists">
+            <viewScriptFile forActionName="useraddplaylist"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Soap">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+        </viewScriptsDirectory>
+        <viewHelpersDirectory/>
+        <viewFiltersDirectory enabled="false"/>
+      </viewsDirectory>
+      <bootstrapFile filesystemName="Bootstrap.php"/>
+    </applicationDirectory>
+    <dataDirectory enabled="false">
+      <cacheDirectory enabled="false"/>
+      <searchIndexesDirectory enabled="false"/>
+      <localesDirectory enabled="false"/>
+      <logsDirectory enabled="false"/>
+      <sessionsDirectory enabled="false"/>
+      <uploadsDirectory enabled="false"/>
+    </dataDirectory>
+    <docsDirectory>
+      <file filesystemName="README.txt"/>
+    </docsDirectory>
+    <libraryDirectory>
+      <zfStandardLibraryDirectory enabled="false"/>
+    </libraryDirectory>
+    <publicDirectory>
+      <publicStylesheetsDirectory enabled="false"/>
+      <publicScriptsDirectory enabled="false"/>
+      <publicImagesDirectory enabled="false"/>
+      <publicIndexFile filesystemName="index.php"/>
+      <htaccessFile filesystemName=".htaccess"/>
+    </publicDirectory>
+    <projectProvidersDirectory enabled="false"/>
+    <temporaryDirectory enabled="false"/>
+    <testsDirectory>
+      <testPHPUnitConfigFile filesystemName="phpunit.xml"/>
+      <testPHPUnitBootstrapFile filesystemName="bootstrap.php"/>
+      <testApplicationDirectory>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile forControllerName="Index"/>
+        </testApplicationControllerDirectory>
+      </testApplicationDirectory>
+      <testLibraryDirectory/>
+    </testsDirectory>
+  </projectDirectory>
+</projectProfile>
